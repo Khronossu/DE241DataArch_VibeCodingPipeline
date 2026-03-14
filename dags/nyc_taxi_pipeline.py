@@ -8,10 +8,10 @@ sys.path.append(os.path.dirname(__file__))
 
 # Import the functions from your separate script files
 # This assumes a folder structure of: dags/scripts/ingest.py, etc.
-from dags.scripts.nyc_taxi_pipeline_script.ingest_taxi_data import ingest_taxi_data 
-from dags.scripts.nyc_taxi_pipeline_script.clean_taxi_data import clean_taxi_data
-from dags.scripts.nyc_taxi_pipeline_script.transform_taxi_data import transform_taxi_data
-from dags.scripts.nyc_taxi_pipeline_script.load_taxi_data import load_taxi_model
+from scripts.nyc_taxi_pipeline_script.ingest_taxi_data import ingest_taxi_data 
+from scripts.nyc_taxi_pipeline_script.clean_taxi_data import clean_taxi_data
+from scripts.nyc_taxi_pipeline_script.transform_taxi_data import transform_taxi_data
+from scripts.nyc_taxi_pipeline_script.load_taxi_data import load_taxi_model
 
 # Standard Airflow default arguments
 default_args = {
