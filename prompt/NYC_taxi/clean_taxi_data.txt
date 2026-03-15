@@ -1,0 +1,26 @@
+PROMT: clean_taxi_data
+You are an Apache Airflow expert. Write a Python function called clean_taxi_data(**context) for a
+PythonOperator.
+The function should:
+
+Pull the raw CSV file path from XCom (key="raw_path", task_id="ingest_taxi_data")
+
+Load it with pandas
+
+Apply these cleaning rules:
+
+Remove rows where fare_amount <= 0 or fare_amount > 500
+
+Remove rows where trip_distance <= 0 or trip_distance > 100 miles
+
+Remove rows with invalid pickup/dropoff coordinates (lat must be 40.4-41.0, lon must be -74.3 to -73.5 for NYC)
+
+Drop rows with null values in: fare_amount, trip_distance, tpep_pickup_datetime
+
+Parse tpep_pickup_datetime as datetime
+
+Log how many rows were removed at each step
+
+Save cleaned data to /tmp/nyc_taxi_clean.csv
+
+Push cleaned file path to XCom
